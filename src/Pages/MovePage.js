@@ -1,6 +1,12 @@
 import React from 'react'
+import './MovePage.css';
 
-export default props =>
-<div>
-    Hello world!
-</div> 
+
+const MovePage = () => (
+
+<div className="moveMain">
+
+</div>
+);
+
+export default MovePage;

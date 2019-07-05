@@ -6,7 +6,6 @@ export default class extends Component {
 render (){
 return <Fragment>
 <Header/>
-<Divider/>
 <NavBar/>
 
 </Fragment>
