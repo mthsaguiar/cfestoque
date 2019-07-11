@@ -8,6 +8,7 @@ import Icon from '@material-ui/core/Icon'
 import ListItemText from '@material-ui/core/ListItemText'
 import addProdButton from '../assets/baseline-add_box-24px.svg'
 import inOutButton from '../assets/baseline-swap_vert-24px.svg'
+import homeButton from '../assets/sharp-apps-24px.svg'
 import sideBar from '../images/sideBar.jpg'
 import { Link } from 'react-router-dom'
 
@@ -47,7 +48,14 @@ return(
 
             <div className={classes.menuList} >
                 <List component="nav" aria-label="Menu de navegação">
-                <Link to ="/">
+                <ListItem button component={Link} to="">
+                        <ListItemIcon>
+                            <Icon className={classes.icon}>
+                                <img src={homeButton} alt="homeButton"/>
+                            </Icon>
+                        </ListItemIcon>
+                        <ListItemText primary="INÍCIO"/>
+                    </ListItem>
                     <ListItem button>
                         <ListItemIcon>
                             <Icon className={classes.icon}>
@@ -56,8 +64,7 @@ return(
                         </ListItemIcon>
                         <ListItemText primary="PRODUTO"/>
                     </ListItem>
-                </Link>
-                    <ListItem button>
+                    <ListItem button component={Link} to="/move">
                         <ListItemIcon>
                             <Icon className={classes.icon}>
                                 <img src={inOutButton} alt="inOutButton"/>
