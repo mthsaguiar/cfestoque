@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import addProdButton from '../assets/baseline-add_box-24px.svg'
 import inOutButton from '../assets/baseline-swap_vert-24px.svg'
 import sideBar from '../images/sideBar.jpg'
+import { Link } from 'react-router-dom'
 
 const navBarWidth = 240;
 
@@ -46,6 +47,7 @@ return(
 
             <div className={classes.menuList} >
                 <List component="nav" aria-label="Menu de navegação">
+                <Link to ="/">
                     <ListItem button>
                         <ListItemIcon>
                             <Icon className={classes.icon}>
@@ -54,6 +56,7 @@ return(
                         </ListItemIcon>
                         <ListItemText primary="PRODUTO"/>
                     </ListItem>
+                </Link>
                     <ListItem button>
                         <ListItemIcon>
                             <Icon className={classes.icon}>
