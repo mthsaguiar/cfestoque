@@ -11,6 +11,7 @@ import inOutButton from '../assets/baseline-swap_vert-24px.svg'
 import homeButton from '../assets/sharp-apps-24px.svg'
 import sideBar from '../images/sideBar.jpg'
 import { Link } from 'react-router-dom'
+import './NavBar.css'
 
 const navBarWidth = 240;
 
@@ -22,7 +23,8 @@ staticBox: {
 sideBar: {
 width: '100%',
 maxWidth: navBarWidth,
-height: '100vh'
+height: '100vh',
+boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 },
 menuList: {
 width: '100%',
@@ -44,8 +46,7 @@ return(
 <navBar >
 <div className={classes.sideBar} style={{backgroundImage: `url(${ImageSideBar})` }}>
     <div className={classes.staticBox}/>
-        <Divider />
-
+        <Divider className="dividerStyle"/>
             <div className={classes.menuList} >
                 <List component="nav" aria-label="Menu de navegação">
                 <ListItem button component={Link} to="">
@@ -54,7 +55,7 @@ return(
                                 <img src={homeButton} alt="homeButton"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText primary="INÍCIO"/>
+                        <ListItemText primary="Início"/>
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
@@ -62,7 +63,7 @@ return(
                                 <img src={addProdButton} alt="addProduto"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText primary="PRODUTO"/>
+                        <ListItemText primary="Produto"/>
                     </ListItem>
                     <ListItem button component={Link} to="/move">
                         <ListItemIcon>
@@ -70,7 +71,7 @@ return(
                                 <img src={inOutButton} alt="inOutButton"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText primary="MOVIMENTAÇÃO"/>
+                        <ListItemText primary="Movimentação"/>
                     </ListItem>
                 </List>
             </div>

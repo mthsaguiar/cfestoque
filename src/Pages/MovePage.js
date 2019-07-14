@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './MovePage.css';
 
+export default class MovePage extends Component {
+    render() {
+      return( 
+        <div id="move-page">
 
-const MovePage = () => (
-
-<div className="moveMain">
-
-</div>
-);
-
-export default MovePage;
+              SUAHSAUHSASAHAUSHUH
+          
+          
+        </div>);
+    }
+  }

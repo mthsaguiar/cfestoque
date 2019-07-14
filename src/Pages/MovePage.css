@@ -1,0 +1,10 @@
+div#move-page{
+    background: #000000;
+    position: fixed;
+    right: 0;
+    top: 68px;
+    width: calc(100% - 240px);
+    height: calc(100% - 68px);
+    margin: 0 auto;
+    padding: auto;
+}
