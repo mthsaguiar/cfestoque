@@ -6,9 +6,6 @@ export default class MovePage extends Component {
       return( 
         <div id="move-page">
 
-              SUAHSAUHSASAHAUSHUH
-          
-          
         </div>);
     }
   }
