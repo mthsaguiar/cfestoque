@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   appBar:{
     width: `calc(100% - ${barWidth}px)`,
     marginLeft: barWidth,
-    background: 'linear-gradient(60deg, #8e24aa, #ab47bc)',
+    background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
   },
   menuButton: {
     marginRight: theme.spacing(2),

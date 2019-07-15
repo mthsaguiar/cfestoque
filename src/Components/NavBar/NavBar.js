@@ -33,6 +33,7 @@ justifyContent: 'center',
 alignItems: 'flex-end',
 },
 icon: {
+    fill: '#fff',
     margin: theme.spacing(2),
 },
 }));
