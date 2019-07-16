@@ -1,5 +1,5 @@
 section#move-page{
-    background: #ffff;
+    background: #fff;
     position: fixed;
     right: 0;
     top: 68px;
@@ -7,8 +7,4 @@ section#move-page{
     height: calc(100% - 68px);
     margin: 0 auto;
     padding: auto;
-}
-section#move-page .move-buttons{
-    top: 100px;
-    right: 0;
 }

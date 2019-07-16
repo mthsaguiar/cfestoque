@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import addProdButton from '../assets/baseline-add_box-24px.svg'
 import inOutButton from '../assets/baseline-swap_vert-24px.svg'
 import homeButton from '../assets/sharp-apps-24px.svg'
+import buscaProduto from '../assets/baseline-search-24px.svg'
 import sideBar from '../images/sideBar.jpg'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
@@ -21,6 +22,7 @@ staticBox: {
     height: 64,
 },
 sideBar: {
+backgroundColor: '#0000',
 width: '100%',
 maxWidth: navBarWidth,
 height: '100vh',
@@ -56,15 +58,23 @@ return(
                                 <img src={homeButton} alt="homeButton"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText primary="Início"/>
+                        <ListItemText className={classes.textButton} primary="Início"/>
                     </ListItem>
                     <ListItem button>
+                        <ListItemIcon>
+                            <Icon className={classes.icon}>
+                                <img src={buscaProduto} alt="buscaProduto"/>
+                            </Icon>
+                        </ListItemIcon>
+                        <ListItemText className={classes.textButton} primary="Estoque"/>
+                    </ListItem>
+                    <ListItem button component={Link} to="/newproduct">
                         <ListItemIcon>
                             <Icon className={classes.icon}>
                                 <img src={addProdButton} alt="addProduto"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText primary="Produto"/>
+                        <ListItemText className={classes.textButton} primary="Produto"/>
                     </ListItem>
                     <ListItem button component={Link} to="/move">
                         <ListItemIcon>
@@ -72,7 +82,7 @@ return(
                                 <img src={inOutButton} alt="inOutButton"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText primary="Movimentação"/>
+                        <ListItemText className={classes.textButton} primary="Movimentação"/>
                     </ListItem>
                 </List>
             </div>
