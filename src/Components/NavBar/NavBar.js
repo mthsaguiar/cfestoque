@@ -34,6 +34,12 @@ maxWidth: navBarWidth,
 justifyContent: 'center',
 alignItems: 'flex-end',
 },
+textButton:{
+color: 'black',
+},
+svgicon:{
+color: theme.palette.secondary.main,
+},
 icon: {
     fill: '#fff',
     margin: theme.spacing(2),
@@ -53,20 +59,20 @@ return(
             <div className={classes.menuList} >
                 <List component="nav" aria-label="Menu de navegação">
                 <ListItem button component={Link} to="">
-                        <ListItemIcon>
+                        <ListItemIcon className={classes.svgicon}>
                             <Icon className={classes.icon}>
-                                <img src={homeButton} alt="homeButton"/>
+                                <img  src={homeButton} alt="homeButton"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText className={classes.textButton} primary="Início"/>
+                        <ListItemText className={classes.textButton} secondary="Início"/>
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button component={Link} to="/search">
                         <ListItemIcon>
                             <Icon className={classes.icon}>
                                 <img src={buscaProduto} alt="buscaProduto"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText className={classes.textButton} primary="Estoque"/>
+                        <ListItemText className={classes.textButton} secondary="Estoque"/>
                     </ListItem>
                     <ListItem button component={Link} to="/newproduct">
                         <ListItemIcon>
@@ -74,7 +80,7 @@ return(
                                 <img src={addProdButton} alt="addProduto"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText className={classes.textButton} primary="Produto"/>
+                        <ListItemText className={classes.textButton} secondary="Novo Produto"/>
                     </ListItem>
                     <ListItem button component={Link} to="/move">
                         <ListItemIcon>
@@ -82,7 +88,7 @@ return(
                                 <img src={inOutButton} alt="inOutButton"/>
                             </Icon>
                         </ListItemIcon>
-                        <ListItemText className={classes.textButton} primary="Movimentação"/>
+                        <ListItemText className={classes.textButton} secondary="Movimentação"/>
                     </ListItem>
                 </List>
             </div>

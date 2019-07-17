@@ -9,6 +9,7 @@ class newProduct extends Component {
        multiplier: '',
        branch: '',
        amount: '',
+       code: '',
        inputDate: new Date(),
     };
 
@@ -21,6 +22,9 @@ class newProduct extends Component {
         data.append('branch', this.state.branch);
         data.append('amount', this.state.amount);
         data.append('description', this.state.description);
+        data.append('multiplier', this.state.multiplier);
+        data.append('code', this.state.code);
+
     }
 
     handleChange = e =>{
@@ -30,34 +34,39 @@ class newProduct extends Component {
         return(
             <form id="new-product" onSubmit={this.handleSubmit}>
                 <input
+                    id="name"
                     type="text"
                     name="type"
-                    placeholder="Nome do produto"
+                    placeholder="Nome"
                     onChange={this.handleChange}
                     value={this.state.type}
                 />
                 <input
+                    id="code"
                     type="text"
-                    name="description"
-                    placeholder="Descrição do produto"
+                    name="code"
+                    placeholder="Código"
                     onChange={this.handleChange}
                     value={this.state.description}
                 />
                 <input
+                    id="decript"
                     type="text"
-                    name="costPrice"
-                    placeholder="Preço de custo"
+                    name="description"
+                    placeholder="Descrição"
                     onChange={this.handleChange}
-                    value={this.state.costPrice}
+                    value={this.state.description}
                 />
-                <input
+                 <input
+                    id="branches"
                     type="text"
                     name="branch"
-                    placeholder="Marca do produto"
+                    placeholder="Marca"
                     onChange={this.handleChange}
                     value={this.state.branch}
                 />
                 <input
+                    id="howmany"
                     type="text"
                     name="amount"
                     placeholder="Quantidade"
@@ -65,6 +74,15 @@ class newProduct extends Component {
                     value={this.state.amount}
                 />
                 <input
+                    id="cost"
+                    type="text"
+                    name="costPrice"
+                    placeholder="Custo"
+                    onChange={this.handleChange}
+                    value={this.state.costPrice}
+                />
+                <input
+                    id="mult"
                     type="text"
                     name="multiplier"
                     placeholder="Multiplicador"
