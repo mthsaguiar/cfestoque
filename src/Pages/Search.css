@@ -1,0 +1,14 @@
+div#data-table {
+    position: fixed;
+    top: 68px;
+    width: 100%;
+    right: calc((100% - 240px)/4);
+    max-width: calc((100% - 240px)/2);
+    margin: 30px auto 0;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    
+    display: flex;
+    flex-direction: column;
+  }
