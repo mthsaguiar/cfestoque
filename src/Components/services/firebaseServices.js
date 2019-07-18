@@ -1,5 +1,14 @@
-import {firebaseDatabase} from '../utils/firebaseUtils'
+import {firebaseDatabase} from '../utils/firebaseUltils'
 export default class FirebaseService {
+    static remove = (id, node) => {
+        return firebaseDatabase.ref(node + '/' + id).remove();
+    };
+    static pushData = (node, objToSubmit) => {
+        const ref = firebaseDatabase.ref(node).push();
+        const id = firebaseDatabase.ref(node).push().key;
+        ref.set(objToSubmit);
+        return id;
+    };
     static getDataList = (nodePath, callback, size = 10) => {
 
         let query = firebaseDatabase.ref(nodePath)

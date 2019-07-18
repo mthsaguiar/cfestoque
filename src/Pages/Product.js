@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './Product.css';
-
+import FirebaseService from '../Components/services/firebaseServices'
 class newProduct extends Component {
-    state={
+    constructor(props){
+        super(props);
+    this.state={
+        id: null,
        type: '',
        description: '',
        costPrice: '',
@@ -11,6 +14,16 @@ class newProduct extends Component {
        amount: '',
        code: '',
        inputDate: new Date(),
+    }
+}
+    componentWillMount = () => {
+        const {id} = this.props.match.params;
+
+        if (!(id === undefined || !id)) {
+            this.setState({id});
+            FirebaseService.getUniqueDataBy('leituras', id, (data) => this.setState({...data}, () => console.log(this.state)));
+        }
+
     };
 
     handleSubmit = async e =>{
@@ -24,6 +37,15 @@ class newProduct extends Component {
         data.append('description', this.state.description);
         data.append('multiplier', this.state.multiplier);
         data.append('code', this.state.code);
+
+        if (this.props.match.params.id === undefined) {
+            FirebaseService.pushData('leituras', data);
+        } else {
+            FirebaseService.updateData(this.props.match.params.id, 'leituras', data)
+        }
+
+        await FirebaseService.pushData('leituras', data);
+        this.props.history.push('');
 
     }
 
@@ -47,7 +69,7 @@ class newProduct extends Component {
                     name="code"
                     placeholder="Código"
                     onChange={this.handleChange}
-                    value={this.state.description}
+                    value={this.state.code}
                 />
                 <input
                     id="decript"

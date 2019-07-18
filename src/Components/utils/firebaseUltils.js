@@ -11,5 +11,5 @@ const config = {
     appId: "1:273081594228:web:253c29194e4a4335"
   };
 
-  export const firebaseImpl = firebase.initializeApp(config);
+export const firebaseImpl = firebase.initializeApp(config);
 export const firebaseDatabase = firebase.database();
