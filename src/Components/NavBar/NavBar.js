@@ -10,7 +10,6 @@ import addProdButton from '../assets/baseline-add_box-24px.svg'
 import inOutButton from '../assets/baseline-swap_vert-24px.svg'
 import homeButton from '../assets/sharp-apps-24px.svg'
 import buscaProduto from '../assets/baseline-search-24px.svg'
-import sideBar from '../images/sideBar.jpg'
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 
@@ -22,7 +21,7 @@ staticBox: {
     height: 64,
 },
 sideBar: {
-backgroundColor: '#0000',
+background: 'linear-gradient(45deg, #21CBF3 90%,#2196F3 30%)',
 width: '100%',
 maxWidth: navBarWidth,
 height: '100vh',
@@ -47,13 +46,11 @@ icon: {
 }));
 
 export default function navBar() {
-    
-const ImageSideBar = sideBar;
 const classes = styles();
 
 return(
 <navBar >
-<div className={classes.sideBar} style={{backgroundImage: `url(${ImageSideBar})` }}>
+<div className={classes.sideBar}>
     <div className={classes.staticBox}/>
         <Divider className="dividerStyle"/>
             <div className={classes.menuList} >

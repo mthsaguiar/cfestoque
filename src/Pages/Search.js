@@ -7,9 +7,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper';
-import FirebaseService from '../Components/services/firebaseServices'
-import privateUrls from '../Components/utils/urlUtils'
-import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,11 +25,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Search({data}) {
   const classes = useStyles();
-
-  const remove = (id) => {
-    FirebaseService.remove(id, 'leituras');
-};
-
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
@@ -58,12 +50,12 @@ export default function Search({data}) {
               <TableCell align="right">{item.amount}</TableCell>
               <TableCell align="right">{item.costPrice}</TableCell>
               <TableCell align="right">
-              <Button onClick={() => remove(item.key)}>Remove</Button>
+              <Button >
+                Remove
+                </Button>
               </TableCell>
               <TableCell align="right">
-                <Button component={props => 
-                    <Link to={privateUrls.edit.pathWithouParam + item.key}    
-                    {...props}/>}>
+                <Button>
                     Edit
                 </Button>
               </TableCell>
