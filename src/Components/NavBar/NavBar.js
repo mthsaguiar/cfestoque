@@ -21,6 +21,7 @@ staticBox: {
     height: 64,
 },
 sideBar: {
+position:'absolute',
 background: 'linear-gradient(45deg, #21CBF3 90%,#2196F3 30%)',
 width: '100%',
 maxWidth: navBarWidth,

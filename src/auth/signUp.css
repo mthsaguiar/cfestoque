@@ -1,0 +1,23 @@
+div#container-signup{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fff;
+    top: 0;
+}
+
+
+div#container-signup form{
+    position: fixed;
+    top: 20%;
+    width: 100%;
+    right: calc((100%)/4);
+    max-width: calc((100%)/2);
+    margin: 30px auto 0;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #ddd;
+    
+    display: flex;
+    flex-direction: column;
+  }
