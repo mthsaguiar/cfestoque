@@ -1,45 +1,64 @@
-import React, { Component } from 'react';
-import './signIn.css';
+import React, { Component } from "react";
+import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
+import "./signIn.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-class SignIn extends Component{
 
-    state={
-        email:'',
-        password:''
+class SignIn extends Component {
+ 
+    state = {
+      email: "",
+      password: ""
     };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-
-        console.log(this.state);
+    validateForm() {
+        return this.state.email.length > 0 && this.state.password.length > 0;
     }
-    handleChange = (e) => {
-        this.setState({
-        [e.target.id]: e.target.value
-        })
-    }
+    
+    handleChange = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  }
 
-    render(){
-        return(
-            <div id="container-signin">
-                <form onSubmit={this.handleSubmit}>
-                    <h5 className="title-signin">Login</h5>
-                        <div className="input-field">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" id="email" onChange={this.handleChange}/> 
-                        </div>
-                        <div className="input-field">
-                            <label htmlFor="password">Password</label>
-                            <input type="password" id="password" onChange={this.handleChange}/> 
-                        </div>
-                        <div className="input-field">
-                            <button className="button-signin">Login</button>
-                        </div>
-                </form>
-            </div>
-        );
+  handleSubmit = e => {
+    e.preventDefault();
+    console.log(this.state)
+  }
 
-    }
+  render() {
+    return (
+      <div className="signIn">
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup controlId="email" bsSize="large">
+            <FormLabel>Email</FormLabel>
+            <FormControl
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup controlId="password" bsSize="large">
+            <FormLabel>Password</FormLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+          <Button
+            block
+            bsSize="large"
+            disabled={!this.validateForm()}
+            type="submit"
+          >
+            Login
+          </Button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default SignIn

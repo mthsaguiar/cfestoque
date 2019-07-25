@@ -5,7 +5,7 @@ import MovePage from './Pages/MovePage'
 import NewProduct from './Pages/Product'
 import Search from './Pages/Search'
 import { BrowserRouter, Switch, Route  } from 'react-router-dom'
-import signIn from './auth/signIn'
+import SignIn from './auth/signIn'
 import signUp from './auth/signUp'
 
 export default class extends Component {
@@ -28,7 +28,7 @@ return(
                     />
                     <Route exact path="/newproduct" component={NewProduct}           
                     />
-                    <Route exact path="/login" component={signIn}           
+                    <Route exact path="/login" component={SignIn}           
                     />
                     <Route exact path="/register" component={signUp}           
                     />
