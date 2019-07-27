@@ -44,7 +44,7 @@ export default function TableComponent({data}) {
           { data && data.map((item) => (
             <TableRow key={item.id}>
               <TableCell component="th" scope="row">
-                {item.name}
+                {item.type}
               </TableCell>
               <TableCell align="right">{item.code}</TableCell>
               <TableCell align="right">{item.description}</TableCell>

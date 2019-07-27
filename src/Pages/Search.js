@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import TableComponent from '../Components/Table/table'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
 class Search extends Component {
 
   render(){
@@ -18,9 +20,15 @@ class Search extends Component {
   
 }
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    products: state.project.products
+    products: state.firestore.ordered.products
   }
 }
 
-export default connect(mapStateToProps)(Search)
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    {collection: 'products'}
+  ])
+)(Search)
