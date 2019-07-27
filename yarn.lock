@@ -5058,6 +5058,11 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hoist-non-react-statics@^2.3.1:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
+  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
+
 hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.2.1, hoist-non-react-statics@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
@@ -5293,6 +5298,11 @@ immer@1.10.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/immer/-/immer-1.10.0.tgz#bad67605ba9c810275d91e1c2a47d4582e98286d"
   integrity sha512-O3sR1/opvCDGLEVcvrGTMtLac8GJ5IwZC4puPrLuRj3l7ICKvkmA0vGuU9OW8mV9WIBRnaxp5GJh9IEAaNOoYg==
+
+immer@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-1.5.0.tgz#1ed9b1b653643fe9276bbc36377613523ea32a39"
+  integrity sha1-HtmxtlNkP+kna7w2N3YTUj6jKjk=
 
 import-cwd@^2.0.0:
   version "2.1.0"
@@ -8892,6 +8902,15 @@ react-popper@^1.3.2:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
+react-redux-firebase@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-redux-firebase/-/react-redux-firebase-2.3.0.tgz#a2660ca6b4571055f54c9f020a9568e6ea28d615"
+  integrity sha512-9wff/O4rREUcfH7Vd+TD4VRXjsKWazhefmsZFzxO6lYDSYw8whhomAnT0AZ7jeVIQ5+7xsleKnHJz38ROJHHLw==
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
+    lodash "^4.17.11"
+    prop-types "^15.6.2"
+
 react-redux@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.1.0.tgz#72af7cf490a74acdc516ea9c1dd80e25af9ea0b2"
@@ -9098,6 +9117,20 @@ recursive-readdir@2.2.2:
   integrity sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==
   dependencies:
     minimatch "3.0.4"
+
+reduce-reducers@0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.4.3.tgz#8e052618801cd8fc2714b4915adaa8937eb6d66c"
+  integrity sha512-+CNMnI8QhgVMtAt54uQs3kUxC3Sybpa7Y63HR14uGLgI9/QR5ggHvpxwhGGe3wmx5V91YwqQIblN9k5lspAmGw==
+
+redux-firestore@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/redux-firestore/-/redux-firestore-0.8.0.tgz#ca72e775bb12edb2d8ea11030b9cb2061620f3ef"
+  integrity sha512-axc5YEe1Ls2Lyibu8cIuCxH7ilYFpJXsyw9k2bORPzdZukyWp39G2k7nsl8KVw8aksvXI1nC1icd0rBNMribDg==
+  dependencies:
+    immer "1.5.0"
+    lodash "^4.17.11"
+    reduce-reducers "0.4.3"
 
 redux-thunk@^2.3.0:
   version "2.3.0"

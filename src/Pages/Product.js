@@ -14,7 +14,6 @@ class NewProduct extends Component{
             description: '',
             multiplier: '',
             code: '',
-            date: Date()
 }
 this.handleSubmit = this.handleSubmit.bind(this)
 }
