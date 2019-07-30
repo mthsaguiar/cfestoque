@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Product.css';
-import { createProduct } from '../store/actions/productsActions'
+import { createProduct } from '../../store/actions/productsActions'
 import { connect}  from 'react-redux'
 
 class NewProduct extends Component{

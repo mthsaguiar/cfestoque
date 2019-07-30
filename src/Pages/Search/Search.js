@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import TableComponent from '../Components/Table/table'
+import TableComponent from '../../Components/Table/table'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 class Search extends Component {

@@ -46,11 +46,10 @@ icon: {
 },
 }));
 
-export default function navBar() {
+export default function NavBar() {
 const classes = styles();
 
 return(
-<navBar >
 <div className={classes.sideBar}>
     <div className={classes.staticBox}/>
         <Divider className="dividerStyle"/>
@@ -91,6 +90,5 @@ return(
                 </List>
             </div>
 </div>
-</navBar>
 );
 }

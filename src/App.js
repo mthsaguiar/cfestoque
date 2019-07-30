@@ -1,32 +1,28 @@
 import React, {Component, Fragment} from 'react'
-import Header from './Components/Header/Header'
-import NavBar from './Components/NavBar/NavBar'
-import MovePage from './Pages/MovePage'
-import NewProduct from './Pages/Product'
-import Search from './Pages/Search'
+import Home from './Pages/Home/home'
+import NewProduct from './Pages/ProductInput/Product'
+import Search from './Pages/Search/Search'
 import { BrowserRouter, Switch, Route  } from 'react-router-dom'
 import SignIn from './auth/signIn'
 import signUp from './auth/signUp'
+import { connect } from 'react-redux'
 
-export default class extends Component {
+class App extends Component {
     state = {
         data: []
     };
-    
+
 render (){
+    const { auth } = this.props;
+    const Links = auth.uid ? <Home/> : <SignIn/>
 return(
 <BrowserRouter>
     <Fragment>
-        <Header/>
-            <NavBar/>
+        {Links}
                 <Switch>
-                    <Route path="/move" component={MovePage} 
-                    />
                     <Route path="/search" component={Search}            
                     />
                     <Route exact path="/newproduct" component={NewProduct}           
-                    />
-                    <Route exact path="/login" component={SignIn}           
                     />
                     <Route exact path="/register" component={signUp}           
                     />
@@ -35,3 +31,11 @@ return(
 </ BrowserRouter>);
 }
 }
+
+const mapStateToProps = (state) =>{
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(App)
