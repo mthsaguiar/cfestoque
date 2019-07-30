@@ -5,6 +5,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Icon from '@material-ui/core/Icon'
 import ProfileIcon from '../assets/baseline-reorder-24px.svg'
 import { makeStyles } from '@material-ui/core/styles'
+import { connect } from 'react-redux'
+import signOut from '../../store/actions/authSignOutAction'
 
 const styles = makeStyles (theme =>({
     icon: {
@@ -14,18 +16,19 @@ const styles = makeStyles (theme =>({
 }));
 
 
-export default function ProfileMenu() {
-
-    const classes = styles();
+function ProfileMenu(props) {
+  
+  const classes = styles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  function handleClick(event) {
-    setAnchorEl(event.currentTarget);
-  }
+    function handleClick(event) {
+      setAnchorEl(event.currentTarget);
+    }
 
-  function handleClose() {
-    setAnchorEl(null);
-  }
+    function handleClose() {
+      setAnchorEl(null);
+      props.signOut();
+    }
 
   return (
     <div>
@@ -46,3 +49,10 @@ export default function ProfileMenu() {
     </div>
   );
 }
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    signOut: () => dispatch(signOut())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ProfileMenu);

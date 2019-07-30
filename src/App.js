@@ -22,9 +22,7 @@ return(
                 <Switch>
                     <Route path="/move" component={MovePage} 
                     />
-                    <Route path="/search" 
-                    render={(props) => 
-                        <Search {...props} data={this.state.data}/>}            
+                    <Route path="/search" component={Search}            
                     />
                     <Route exact path="/newproduct" component={NewProduct}           
                     />
