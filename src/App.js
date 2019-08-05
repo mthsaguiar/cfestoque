@@ -6,21 +6,21 @@ import { BrowserRouter, Switch, Route  } from 'react-router-dom'
 import SignIn from './auth/signIn'
 import signUp from './auth/signUp'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class App extends Component {
-    state = {
-        data: []
-    };
 
 render (){
     const { auth } = this.props;
-    const Links = auth.uid ? <Home/> : <SignIn/>
+    const Links = auth.uid ? <Home/> : <Redirect to='/login'/>
 return(
 <BrowserRouter>
     <Fragment>
         {Links}
                 <Switch>
-                    <Route path="/search" component={Search}            
+                    <Route exact path="/login" component={SignIn}            
+                    />
+                    <Route exact path="/search" component={Search}            
                     />
                     <Route exact path="/newproduct" component={NewProduct}           
                     />

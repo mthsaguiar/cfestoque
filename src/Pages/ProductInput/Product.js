@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Product.css';
 import { createProduct } from '../../store/actions/productsActions'
 import { connect}  from 'react-redux'
-
+import { Redirect } from 'react-router-dom'
 class NewProduct extends Component{
     constructor(props) {
         super(props)
@@ -20,7 +20,6 @@ this.handleSubmit = this.handleSubmit.bind(this)
 
     handleSubmit (e) {
         e.preventDefault();
-        
         this.props.createProduct(this.state);
     }
     
@@ -30,6 +29,9 @@ this.handleSubmit = this.handleSubmit.bind(this)
         })
       };
         render(){
+            const { auth } = this.props;
+            if(!auth.uid) return <Redirect to='/login'/>
+            
         return(
             <form id="new-product" onSubmit={this.handleSubmit}>
                 <input
@@ -93,9 +95,15 @@ this.handleSubmit = this.handleSubmit.bind(this)
         );}
 }
 
+const mapStateToProps = (state) =>{
+    return{
+        auth: state.firebase.auth
+    }
+}
+
 const mapDispatchToProps = (dispatch) =>{
     return{
         createProduct:(product)=>dispatch(createProduct(product))
     }
 }
-export default connect(null, mapDispatchToProps)(NewProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(NewProduct);
