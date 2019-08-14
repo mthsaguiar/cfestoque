@@ -1,0 +1,19 @@
+.notfications-container{
+    background: #21CBF3;
+    border-radius: 5px 5px 5px;
+    position: fixed;
+    top: 15%;
+    width: 100%;
+    right: calc((100% - 240px)/8);
+    max-width: calc((100% - 240px)/(8/6));
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+}
+.notfications-container ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}

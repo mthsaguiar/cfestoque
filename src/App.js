@@ -7,6 +7,7 @@ import SignIn from './auth/signIn'
 import signUp from './auth/signUp'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import Notify from './Pages/Notifications/notfications'
 
 class App extends Component {
 
@@ -18,6 +19,8 @@ return(
     <Fragment>
         {Links}
                 <Switch>
+                    <Route exact path="/" component={Notify}            
+                    />
                     <Route exact path="/login" component={SignIn}            
                     />
                     <Route exact path="/search" component={Search}            

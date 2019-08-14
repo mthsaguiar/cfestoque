@@ -9,7 +9,6 @@ export const createProduct = (product) =>{
             author: `${profile.firstName} ${profile.lastName}`,
             authorId: authorId,
             createDate: new Date()
-
         }).then(()=>{
             dispatch({type: 'CREATE_PRODUCT', product});
         }).catch((err)=>{
