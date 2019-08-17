@@ -7,10 +7,30 @@ const Notify = (props) =>{
         <div>
                 <div className="notfications-container">
                     <ul>
-                        <li>Notificação</li>
-                        <li>Notificação</li>
-                        <li>Notificação</li>
-                        <li>Notificação</li>
+                        <li>
+                            <footer>
+                            <strong>Operação realizada</strong>
+                            <p>Características da operação realizada</p>
+                            </footer>
+                         </li>
+                         <li>
+                            <footer>
+                            <strong>Operação realizada</strong>
+                            <p>Características da operação realizada</p>
+                            </footer>
+                         </li>
+                         <li>
+                            <footer>
+                            <strong>Operação realizada</strong>
+                            <p>Características da operação realizada</p>
+                            </footer>
+                         </li>
+                         <li>
+                            <footer>
+                            <strong>Operação realizada</strong>
+                            <p>Características da operação realizada</p>
+                            </footer>
+                         </li>
                     </ul>
 
                 </div>    

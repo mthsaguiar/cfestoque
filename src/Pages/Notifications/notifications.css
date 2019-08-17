@@ -1,12 +1,9 @@
 .notfications-container{
-    background: #21CBF3;
-    border-radius: 5px 5px 5px;
     position: fixed;
     top: 15%;
     width: 100%;
     right: calc((100% - 240px)/8);
     max-width: calc((100% - 240px)/(8/6));
-    margin: 0 auto;
     padding: 50px;
     text-align: center;
 }
@@ -16,4 +13,24 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 30px;
     margin-top: 10px;
+}
+.notfications-container ul li{
+    background: rgb(78, 222, 255);
+    border-radius: 3px 3px 3px;
+    display: flex;
+}
+.notfications-container ul li footer{
+    padding: 15px 20px;
+    flex: 1;
+    text-align: left;
+}
+.notfications-containerul li footer strong{
+    font-size: 16px;
+    color: #333;
+}
+.notfications-container ul li footer p{
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(0, 82, 150);
+    margin-top: 5px;
 }
