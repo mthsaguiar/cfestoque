@@ -5,9 +5,9 @@ import Search from './Pages/Search/Search'
 import { BrowserRouter, Switch, Route  } from 'react-router-dom'
 import SignIn from './auth/signIn'
 import signUp from './auth/signUp'
+import Notify from './Pages/Notifications/notfications'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import Notify from './Pages/Notifications/notfications'
 
 class App extends Component {
 

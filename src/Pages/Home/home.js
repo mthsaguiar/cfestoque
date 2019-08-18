@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import HeaderBar from '../../Components/Header/Header'
 import NavBar from '../../Components/NavBar/NavBar'
 
-const Home = (props) =>{
+export default class Home extends Component{
+    render(){
         return(
         <div>
             <NavBar/>
@@ -10,4 +11,5 @@ const Home = (props) =>{
         </div>
         );
     }
-export default Home;
+    }
+

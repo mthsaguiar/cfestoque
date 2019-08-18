@@ -1,41 +1,50 @@
-import React from 'react'
+import React, { Component } from 'react'
+import moment from 'moment'
 import './notifications.css'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { firestoreConnect } from 'react-redux-firebase';
 
 
-const Notify = (props) =>{
+class Notify extends Component{
+   render(){
+   const {notification} = this.props;
+
         return(
         <div>
                 <div className="notfications-container">
                     <ul>
-                        <li>
-                            <footer>
-                            <strong>Operação realizada</strong>
-                            <p>Características da operação realizada</p>
-                            </footer>
-                         </li>
-                         <li>
-                            <footer>
-                            <strong>Operação realizada</strong>
-                            <p>Características da operação realizada</p>
-                            </footer>
-                         </li>
-                         <li>
-                            <footer>
-                            <strong>Operação realizada</strong>
-                            <p>Características da operação realizada</p>
-                            </footer>
-                         </li>
-                         <li>
-                            <footer>
-                            <strong>Operação realizada</strong>
-                            <p>Características da operação realizada</p>
-                            </footer>
-                         </li>
+                           { notification && notification.map(item=>{
+                              return(
+                           <li key={item.id}>
+                                 <footer>
+                                    <strong>{item.user}</strong>
+                                    <p>{item.content}</p>
+                                    <div>
+                                       {moment(item.time.toDate()).fromNow()}
+                                    </div>
+                                 </footer>
+                           </li>   
+                              )
+                           })}
+                            
                     </ul>
 
                 </div>    
 
         </div>
         );
-    }
-export default Notify;
+    }}
+
+   const mapStateToProps = (state) =>{
+      return {
+          notification: state.firestore.ordered.notification
+      }
+  }
+  
+   export default compose(
+      connect(mapStateToProps),
+      firestoreConnect([
+          { collection:'notification', limit: 6, orderBy:['time','desc'] }
+      ])
+  )(Notify)
