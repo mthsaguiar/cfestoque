@@ -3,7 +3,6 @@ import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import signIn from '../store/actions/authSignInAction'
 import "./signIn.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect } from 'react-router-dom'
 class SignIn extends Component {
  

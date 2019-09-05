@@ -5,7 +5,6 @@
     right: calc((100% - 240px)/8);
     max-width: calc((100% - 240px)/(8/6));
     padding: 50px;
-    text-align: center;
 }
 .notfications-container ul{
     list-style: none;
@@ -31,6 +30,6 @@
 .notfications-container ul li footer p{
     font-size: 14px;
     line-height: 20px;
-    color: rgb(0, 82, 150);
+    color:#fafafa;
     margin-top: 5px;
 }
