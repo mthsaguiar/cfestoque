@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import signIn from '../store/actions/authSignInAction'
 import "./signIn.css";
@@ -32,36 +31,22 @@ class SignIn extends Component {
     if(auth.uid) return <Redirect to='/'/>
     return (
       <div className="signIn">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <FormLabel>Email</FormLabel>
-            <FormControl
-              autoFocus
-              type="email"
+          <form>
+            <p>E-mail</p>
+              <input type="text" name="" placeholder="Insira seu e-mail"
               value={this.state.email}
-              onChange={this.handleChange}
-            />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <FormLabel>Password</FormLabel>
-            <FormControl
+              onChange={this.handleChange}/>
+            <p>Password</p>
+              <input type="password" name="" placeholder="Insira sua senha"
               value={this.state.password}
-              onChange={this.handleChange}
-              type="password"
-            />
-          </FormGroup>
-          <Button
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
-            type="submit"
-          >
-            Login
-          </Button>
-          <div>
-            { authError ? <p> {authError}</p>: null}
-          </div>
-        </form>
+              onChange={this.handleChange}/>
+              <input 
+              type="submit" 
+              name="" 
+              value="Login"
+              disabled={!this.validateForm()}/>
+                { authError ? <p>{authError}</p>: null}
+          </form>
       </div>
     );
   }
