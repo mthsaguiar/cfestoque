@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import {connect} from 'react-redux'
 import signIn from '../store/actions/authSignInAction'
 import "./signIn.css";
@@ -33,31 +32,29 @@ class SignIn extends Component {
     return (
       <div className="signIn">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <FormLabel>Email</FormLabel>
-            <FormControl
-              autoFocus
-              type="email"
+            <p>Usuário</p>
+              <input
+              id="email"
+              placeholder="Insira seu e-mail de usuário"
+              type="text"
               value={this.state.email}
               onChange={this.handleChange}
-            />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <FormLabel>Password</FormLabel>
-            <FormControl
+              />
+            <p>Senha</p>
+              <input
+              id="password"
+              placeholder="Insira sua senha de acesso"
+              type="password"
               value={this.state.password}
               onChange={this.handleChange}
-              type="password"
-            />
-          </FormGroup>
-          <Button
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
+              />
+            <input
+            value="Login"
             type="submit"
-          >
-            Login
-          </Button>
+            id="button"
+            disabled={!this.validateForm()}
+            />
+
           <div>
             { authError ? <p> {authError}</p>: null}
           </div>
