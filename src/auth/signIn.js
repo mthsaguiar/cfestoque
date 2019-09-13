@@ -16,11 +16,11 @@ class SignIn extends Component {
     
     handleChange = e => {
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.name]: e.target.value
     });
   }
   
-  handleSubmit = e => {
+    handleSubmit = e => {
     e.preventDefault();
     this.props.signIn(this.state);
 
@@ -33,11 +33,17 @@ class SignIn extends Component {
       <div className="signIn">
           <form>
             <p>E-mail</p>
-              <input type="text" name="" placeholder="Insira seu e-mail"
+              <input t
+              ype="text" 
+              name="email" 
+              placeholder="Insira seu e-mail" 
               value={this.state.email}
               onChange={this.handleChange}/>
             <p>Password</p>
-              <input type="password" name="" placeholder="Insira sua senha"
+              <input 
+              type="password" 
+              name="password" 
+              placeholder="Insira sua senha"
               value={this.state.password}
               onChange={this.handleChange}/>
               <input 
