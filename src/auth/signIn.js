@@ -23,7 +23,7 @@ class SignIn extends Component {
     handleSubmit = e => {
     e.preventDefault();
     this.props.signIn(this.state);
-
+    this.history.push('/')
   }
 
   render() {
@@ -33,8 +33,8 @@ class SignIn extends Component {
       <div className="signIn">
           <form>
             <p>E-mail</p>
-              <input t
-              ype="text" 
+              <input 
+              type="text" 
               name="email" 
               placeholder="Insira seu e-mail" 
               value={this.state.email}
@@ -51,7 +51,9 @@ class SignIn extends Component {
               name="" 
               value="Login"
               disabled={!this.validateForm()}/>
+              <div>
                 { authError ? <p>{authError}</p>: null}
+              </div>
           </form>
       </div>
     );
