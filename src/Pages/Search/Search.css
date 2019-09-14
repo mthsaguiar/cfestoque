@@ -1,0 +1,6 @@
+.s-container{
+    right: calc((100% - 240px)/8);
+    top: 80px;
+    width: 60%;
+    position: absolute;
+}
