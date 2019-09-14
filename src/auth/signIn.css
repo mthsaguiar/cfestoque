@@ -25,13 +25,6 @@
   font-family: sans-serif;
 }
 
-<<<<<<< HEAD
-.signIn input ::placeholder{
-  color: #fff !important;
-}
-
-=======
->>>>>>> branchmergetest
 .signIn input[type="text"], input[type="password"]{
   border: none;
   border-bottom: 1px solid #fff;

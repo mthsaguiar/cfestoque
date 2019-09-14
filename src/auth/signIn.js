@@ -16,54 +16,21 @@ class SignIn extends Component {
     
     handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.id]: e.target.value
     });
     }
   
     handleSubmit = e => {
-<<<<<<< HEAD
-    e.preventDefault();
-    this.props.signIn(this.state);
-    this.history.push('/')
-  }
-=======
       e.preventDefault();
       this.props.signIn(this.state);
 
     }
->>>>>>> branchmergetest
 
   render() {
     const { authError, auth} = this.props;
     if(auth.uid) return <Redirect to='/'/>
     return (
       <div className="signIn">
-<<<<<<< HEAD
-          <form>
-            <p>E-mail</p>
-              <input 
-              type="text" 
-              name="email" 
-              placeholder="Insira seu e-mail" 
-              value={this.state.email}
-              onChange={this.handleChange}/>
-            <p>Password</p>
-              <input 
-              type="password" 
-              name="password" 
-              placeholder="Insira sua senha"
-              value={this.state.password}
-              onChange={this.handleChange}/>
-              <input 
-              type="submit" 
-              name="" 
-              value="Login"
-              disabled={!this.validateForm()}/>
-              <div>
-                { authError ? <p>{authError}</p>: null}
-              </div>
-          </form>
-=======
         <form onSubmit={this.handleSubmit}>
             <p>Usuário</p>
               <input
@@ -92,7 +59,6 @@ class SignIn extends Component {
             { authError ? <p> {authError}</p>: null}
           </div>
         </form>
->>>>>>> branchmergetest
       </div>
     );
   }
