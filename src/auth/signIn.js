@@ -18,13 +18,13 @@ class SignIn extends Component {
     this.setState({
       [e.target.id]: e.target.value
     });
-  }
+    }
   
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.signIn(this.state);
+    handleSubmit = e => {
+      e.preventDefault();
+      this.props.signIn(this.state);
 
-  }
+    }
 
   render() {
     const { authError, auth} = this.props;
