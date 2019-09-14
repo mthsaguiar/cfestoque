@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import TableComponent from '../../Components/Table/table'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
@@ -75,6 +74,7 @@ render(){
       data={products}
       filterable
       defaultPageSize={10}
+      showPageSizeOptions={false}
       />
     </div>
     );
