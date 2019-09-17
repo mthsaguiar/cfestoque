@@ -4,7 +4,7 @@ import NewProduct from './Pages/ProductInput/Product'
 import Search from './Pages/Search/Search'
 import { BrowserRouter, Switch, Route  } from 'react-router-dom'
 import SignIn from './auth/signIn'
-import signUp from './auth/signUp'
+import Move from './Pages/Move/Move'
 import Notify from './Pages/Notifications/notfications'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
@@ -27,7 +27,7 @@ return(
                     />
                     <Route exact path="/newproduct" component={NewProduct}           
                     />
-                    <Route exact path="/register" component={signUp}           
+                    <Route exact path="/move" component={Move}           
                     />
                 </Switch>
     </Fragment>
