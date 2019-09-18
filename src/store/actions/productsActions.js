@@ -16,3 +16,10 @@ export const createProduct = (product) =>{
         })
     }
 };
+
+export const updateProduct = (product) =>{
+    return(dispatch, getState, {getFirebase, getFirestore})=>{
+        
+    }
+
+}

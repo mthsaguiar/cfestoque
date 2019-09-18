@@ -1,0 +1,40 @@
+.m-container{
+    height: 200px;
+    border: 1px solid #999;
+    position: absolute;
+    top: 100px;
+    right: calc((100% - 240px)/4);
+    width: calc((100% - 240px)/2);
+    max-width: calc((100% - 240px)/2);
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+.m-container form {
+    margin: 20px;
+    width: 100%;
+    padding: 20px;
+}
+.m-container form input[type="text"]{
+    width: 80%;
+    max-width: 80%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.m-container form input[type=submit]{
+    width: 30%;
+    padding: 5px;
+    margin: 20px;
+    border: none;
+    background: limegreen;
+    color: #fff;
+
+}
+.m-container form select{
+    padding: 3px;
+    width: 30%;
+    background: #21CBF3;
+    border: none;
+    color: #fff;
+}
