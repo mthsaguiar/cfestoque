@@ -26,7 +26,7 @@ this.handleSubmit = this.handleSubmit.bind(this)
     
     handleChange = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.name ==='amount' ? parseInt(e.target.value) : e.target.value
         })
       };
         render(){

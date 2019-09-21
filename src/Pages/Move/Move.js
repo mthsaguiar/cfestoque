@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect}  from 'react-redux'
+import { updateProduct } from '../../store/actions/productsActions'
 import './Move.css'
 
-export default class Move extends Component {
+class Move extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -10,18 +12,19 @@ export default class Move extends Component {
       option: 'Entrada'
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit = e =>{
+    e.preventDefault();
+    this.props.updateProduct(this.state);
   }
 
   handleChange = e =>{
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.name === 'amount' ? parseInt(e.target.value) : e.target.value
     });
   }
-  handleSubmit = e =>{
-    e.preventDefault();
-    
-  }
-
 
   render() {
     return (
@@ -60,3 +63,9 @@ export default class Move extends Component {
     );
   }
 }
+const mapDispatchToProps = (dispatch) =>{
+  return{
+      updateProduct:(product)=>dispatch(updateProduct(product))
+  }
+}
+export default connect(null, mapDispatchToProps)(Move);
