@@ -7,13 +7,18 @@ import './Search.css'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
 class Search extends Component {
-
-  state={
-    cod:''
+  constructor(props){
+    super(props)
+    this.state={
+      cod:''
+    }
+    
   }
+
+    
 render(){
 
-  const { products, auth } = this.props;
+  const { products, auth} = this.props;
   const columns = [
     {
       Header: "Código",
@@ -31,9 +36,9 @@ render(){
       style:{
         fontSize: 12,
       },
-      width: 330,
-      maxWidth: 330,
-      minWidth: 330,
+      width: 220,
+      maxWidth: 220,
+      minWidth: 220,
     },
     {
       Header: "Marca",
@@ -64,6 +69,23 @@ render(){
       width: 100,
       maxWidth: 100,
       minWidth: 100,
+    },
+    {
+      Header:"Remover",
+      style:{
+        textAlign: "center"
+      },
+      Cell: props =>{
+        return(
+          <button style={{backgroundColor: "#21CBF3", color: "#fff", fontSize: 12, padding: 2, border: "none"}}
+          >Remover</button>
+        );
+      },
+      sortable: false,
+      filterable: false,
+      width: 80,
+      maxWidth: 80,
+      minWidth: 80,
     }
   ]
   if(!auth.uid) return <Redirect to='/login'/>
@@ -82,15 +104,19 @@ render(){
   
 }
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     products: state.firestore.ordered.products,
     auth: state.firebase.auth
   }
 }
 
+const mapDispatchToProps = (dispatch) =>{
+  return{
+  }
+}
+
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
     {collection: 'products'}
   ])

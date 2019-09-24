@@ -46,3 +46,10 @@ export const updateProduct = (product) =>{
 
     }
 }
+
+export const removeProduct = (product) =>{
+    return(dispatch, getState, {getFirebase, getFirestore})=>{
+        const firestore = getFirestore();
+        firestore.collection('products').doc(product)
+    }
+}
