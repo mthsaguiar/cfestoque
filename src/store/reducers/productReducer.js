@@ -15,8 +15,14 @@ switch(action.type){
         console.log('updated product', action.product)
         return state;
     case 'UPDATE_PRODUCT_ERROR':
-        console.log('updated product', action.err)
+        console.log('updated product error', action.err)
         return state
+    case 'REMOVE_PRODUCT':
+        console.log('removed product', action.product)
+        return state;
+    case 'REMOVE_PRODUCT_ERROR':
+        console.log('removed product error', action.err)
+        return state;
     default:
         return state;
 }

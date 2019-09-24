@@ -36,7 +36,7 @@ export const updateProduct = (product) =>{
                     amount: aux
                 }
             ).then(()=>{
-                dispatch({type: 'UPDATE_PRODUCT', product})
+                dispatch({type: 'UPDATE_PRODUCT', product});
             }).catch((err)=>{
                 dispatch({type: 'UPDATE_PRODUCT_ERROR', err})
             });});
@@ -45,11 +45,18 @@ export const updateProduct = (product) =>{
         });
 
     }
-}
+};
 
 export const removeProduct = (product) =>{
     return(dispatch, getState, {getFirebase, getFirestore})=>{
-        const firestore = getFirestore();
-        firestore.collection('products').doc(product)
+        console.log(product.cod)
+       const firestore = getFirestore();
+       firestore.collection('products').doc(product.cod).delete()
+        .then(()=>{
+           dispatch({type: 'REMOVE_PRODUCT', product})
+        })
+        .catch((err)=>{
+            dispatch({type: 'REMOVE_PRODUCT_ERROR', err})
+        })
     }
 }

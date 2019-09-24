@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
+import { removeProduct } from '../../store/actions/productsActions'
 import './Search.css'
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
@@ -12,9 +13,14 @@ class Search extends Component {
     this.state={
       cod:''
     }
-    
   }
 
+  async handleClick(productId){
+    await this.setState({
+      cod: productId
+    })
+    this.props.removeProduct(this.state);
+  }
     
 render(){
 
@@ -78,6 +84,9 @@ render(){
       Cell: props =>{
         return(
           <button style={{backgroundColor: "#21CBF3", color: "#fff", fontSize: 12, padding: 2, border: "none"}}
+          onClick={()=>{
+            this.handleClick(props.original.id)
+          }}
           >Remover</button>
         );
       },
@@ -112,6 +121,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
   return{
+    removeProduct:(product)=>dispatch(removeProduct(product))
   }
 }
 
