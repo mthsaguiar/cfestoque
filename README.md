@@ -32,13 +32,13 @@
 ## Interface do sistema <br />
 
 __Tela "Início", aparecem as notificações que sinalizam os últimos produtos cadastrados__<br />
-    <img src="/imgs/Inicio.png>
+    <img src="/imgs/Inicio.png">
 __Tela "Novo Produto" para o cadastro de novos produtos__<br />
-    <img src="/imgs/Cadastro.png>
+    <img src="/imgs/Cadastro.png">
 __Tela "Movimentação" para incrementar e/ou decrementar a quantidade de produtos__<br />
-    <img src="/imgs/Movimentação.png>
+    <img src="/imgs/Movimentação.png">
 __Tela "Estoque" para visualizar, filtrar ou remover produtos__<br />
-    <img src="/imgs/Estoque.png>
+    <img src="/imgs/Estoque.png">
 
 __Ps: Primeiro projeto utilizando React Redux, mantém o fluxo de dados bastante organizado.__<br />
 __Agradecimentos ao The Ninja Net pelo ótimo conteúdo https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg__
